@@ -1,0 +1,39 @@
+{
+    "env": {
+      "node": true,
+      "cypress/globals": true
+    },
+    "extends": "eslint:recommended",
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+      "requireConfigFile": false
+    },
+    "plugins": ["cypress"],
+    "ignorePatterns": [
+      "webpack.config.js",
+      "e2e/spec/core/event_types/end_to_end/one_off/create_one_off_event_spec.js"
+    ],
+    "rules": {
+      "camelcase": "error",
+      "comma-spacing": "error",
+      "comma-style": "error",
+      "complexity": ["error", { "max": 5 }],
+      "curly": "error",
+      "cypress/no-unnecessary-waiting": "warn",
+      "cypress/no-force": "warn",
+      "indent": ["error", 2, { "SwitchCase": 1 }],
+      "max-lines": ["warn", { "max": 400, "skipComments": true }],
+      "no-multiple-empty-lines": "error",
+      "no-var": "error",
+      "quotes": [
+        "error",
+        "double",
+        { "allowTemplateLiterals": true, "avoidEscape": true }
+      ],
+      "space-in-parens": "error",
+      "semi-style": "error",
+      "semi-spacing": "error",
+      "wrap-regex": "error"
+    }
+  }
+  
