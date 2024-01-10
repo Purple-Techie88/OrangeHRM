@@ -12,7 +12,6 @@ describe("User can log in and out of OrangeHRM", () => {
         const userName = Cypress.env('userName');
         const password = Cypress.env('password');
         
-        // cy.visit("/")
         login_page.getUserNameInputField().type(userName);
         login_page.getPasswordInputField().type(password);
         login_page.getLoginButton().click();
