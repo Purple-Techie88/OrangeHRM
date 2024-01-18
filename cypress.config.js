@@ -1,10 +1,14 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+  projectId: "gfcyrm",
   chromeWebSecurity: false,
   env: {
     userName: "Admin",
     password: "admin123",
+  },
+  retries: {
+    runMode: 1,
   },
   e2e: {
     setupNodeEvents(on, config) {
