@@ -21,7 +21,6 @@ describe("User is able to update Personal Details in profile", () => {
     personalDetails.getBirthdateCalendar().click();
     personalDetails.selectBirthdateOnCalendar();
     personalDetails.getGenderRole("Male").click();
-    personalDetails.getSmokerCheckBox().check({ force: true });
     personalDetails.getButtonByName("Save").click();
     cy.get(".oxd-toast-container").should("be.visible");
     personalDetails

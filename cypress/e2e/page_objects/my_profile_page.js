@@ -39,14 +39,6 @@ class PersonalDetails extends MyProfilePage {
     return cy.get(".--gender-grouped-field").contains(gender);
   }
 
-  getSmokerCheckBox() {
-    return cy
-      .xpath(
-        "//label[contains(text(),'Smoker')]//following::input[@type='checkbox']"
-      )
-      .eq(0);
-  }
-
   selectBirthdateOnCalendar() {
     let birthYears = [1988, 1995, 2005];
     let birthYear = birthYears[Math.floor(Math.random() * birthYears.length)];
