@@ -3,7 +3,7 @@ pipeline{
     agent any
 
     parameters{
-        string(name: "SPEC", defaultValue: "cyprss/integration/**/**", description: "Enter the script path that you want to execute")
+        string(name: "SPEC", defaultValue: "cypress/e2e/spec/**", description: "Enter the script path that you want to execute")
         choice(name: 'BROWSER', choices: ['chrome', 'edge', 'firefox'], description: "Choice of the browser you want to execute scripts")
         
 
