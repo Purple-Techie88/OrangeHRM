@@ -17,10 +17,11 @@ stages{
         echo "Builidng the application"
     }
     stage('Testing'){
-        steps(
-          sh '''npm i
-                "npx cypress run -- browser" ${BROWSER} --spec ${SPEC}'''
-        )
+          scripts: {
+    "test": "node_modules/.bin/cypress run",
+    "chromeTest": "npm run test -- -- browser chrome",
+    "recordDashboardTest": "npm run test -- --record --key 4f04c862-cac0-4d4e-b917-056a797a9284"
+  }
     }
     stage('Deploying'){
         echo "Deploy the application"
