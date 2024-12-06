@@ -13,16 +13,20 @@ options{
 
 }
 stages{
-    stage('Build'){
-        echo "Builidng the application"
+    stage('Building'){
+        steps{
+            echo "Builidng the application"
+}
     }
     stage('Testing'){
-          scripts(
+          steps{
         "npm run test -- --record --key 4f04c862-cac0-4d4e-b917-056a797a9284"
-    )
+          }
     }
     stage('Deploying'){
+        steps{
         echo "Deploy the application"
+    }
     }
 }
 post(
