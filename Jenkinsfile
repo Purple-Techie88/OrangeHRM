@@ -8,8 +8,6 @@ pipeline{
         
 
     }
-
-}
 stages{
     stage('Building'){
         steps{
@@ -32,4 +30,4 @@ post{
     always{
 echo 'Find a way to create a report for Mac'    }
 }
-
+}
