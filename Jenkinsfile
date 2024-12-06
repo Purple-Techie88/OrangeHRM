@@ -20,8 +20,8 @@ stages{
     }
     stage('Testing'){
           steps{
-        "npm run test -- --record --key 4f04c862-cac0-4d4e-b917-056a797a9284"
-          }
+            sh "npm i"
+            sh "npx cypress run -- browser" ${BROWSER} --spec ${SPEC}          }
     }
     stage('Deploying'){
         steps{
