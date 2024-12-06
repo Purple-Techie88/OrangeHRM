@@ -8,8 +8,6 @@ pipeline{
         
 
     }
-options{
-    ansiColor('xterm')
 
 }
 stages{
