@@ -16,8 +16,9 @@ stages{
     }
     stage('Testing'){
           steps{
-            sh "npm i"
-            sh "npx cypress run --browser ${BROWSER} --spec ${SPEC}"        
+            // sh "npm i"
+            // sh "npx cypress run --browser ${BROWSER} --spec ${SPEC}"      
+            sh "npm run test -- --record --key 4f04c862-cac0-4d4e-b917-056a797a9284"  
     }
     }
     stage('Deploying'){
