@@ -32,7 +32,6 @@ stages{
 }
 post{
     always{
-        publishHTML([allowMissing: false, alwaysLinkedToLastBuild: false, keepAll: true, reportDir: 'cypress/report', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ""])
-    }
+echo 'Find a way to create a report for Mac'    }
 }
 }
