@@ -17,12 +17,12 @@ pipeline{
         BUILD_USER = ''
     }
 
-    parameters{
-        string(name: "SPEC", defaultValue: "cypress/e2e/spec/**", description: "Enter the script path that you want to execute")
-        choice(name: 'BROWSER', choices: ['chrome', 'edge', 'firefox'], description: "Choice of the browser you want to execute scripts")
+    // parameters{
+    //     string(name: "SPEC", defaultValue: "cypress/e2e/spec/**", description: "Enter the script path that you want to execute")
+    //     choice(name: 'BROWSER', choices: ['chrome', 'edge', 'firefox'], description: "Choice of the browser you want to execute scripts")
         
 
-    }
+    // }
 stages{
     stage('Build'){
         steps{
