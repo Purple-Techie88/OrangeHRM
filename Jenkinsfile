@@ -1,6 +1,21 @@
+import groovy.json.JsonOutput
+
+def COLOR_MAP = [
+'SUCCESS': 'good', 
+'FAILURE': 'danger',
+]
+
+def getBuildUser(){
+    return currentBuild.rawBuild.getCause(Cause.UserIdCausee).getUserID()
+}
+
 pipeline{
     
     agent any
+
+    environment{
+        BUILD_USER = ''
+    }
 
     parameters{
         string(name: "SPEC", defaultValue: "cypress/e2e/spec/**", description: "Enter the script path that you want to execute")
@@ -9,7 +24,7 @@ pipeline{
 
     }
 stages{
-    stage('Building'){
+    stage('Build'){
         steps{
             echo "Builidng the application"
 }
@@ -21,7 +36,7 @@ stages{
             sh "npm run test -- --record --key 4f04c862-cac0-4d4e-b917-056a797a9284"  
     }
     }
-    stage('Deploying'){
+    stage('Deploy'){
         steps{
         echo "Deploy the application"
     }
@@ -29,6 +44,14 @@ stages{
 }
 post{
     always{
+        script {
+            BUILD_USER = getBuildUser()
+        }
+
+        slackSend channel: 'automation-status-reports',
+        color: COLOR_MAP [currentBuild.currentResult],
+        message: "*${currentBuild.currentResult}:* ${env.JOB_NAME} build ${env.BUILD_NUMBER} by ${BUILD_USER} \n Tests: ${SPEC} executed at ${BROWSER}"
+
 echo 'Find a way to create a report for Mac'    }
 }
 }
