@@ -48,7 +48,7 @@ post{
             BUILD_USER = getBuildUser()
         }
 
-        slackSend channel: '#automation-status-reports',
+        slackSend channel: 'automation-status-reports',
         color: COLOR_MAP [currentBuild.currentResult],
         message: "*${currentBuild.currentResult}:* ${env.JOB_NAME} build ${env.BUILD_NUMBER} by ${BUILD_USER} \n Tests: ${SPEC} executed at ${BROWSER}"
 
