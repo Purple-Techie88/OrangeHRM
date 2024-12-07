@@ -44,9 +44,9 @@ stages{
 }
 post{
     always{
-        script {
-            // BUILD_USER = getBuildUser()
-        }
+        // script {
+        //     // BUILD_USER = getBuildUser()
+        // }
 
         slackSend channel: 'automation-status-reports',
         color: COLOR_MAP [currentBuild.currentResult],
