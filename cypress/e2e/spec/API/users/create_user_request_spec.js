@@ -26,6 +26,7 @@ describe("Create user via POST call ", () => {
             empNumber: employeeNumber
          }
       }).then((res) => {
+         expect(res).property("status").eq(200);
          const userId = res.body.data.id
          cy.request(({
             method: "DELETE",
@@ -34,7 +35,9 @@ describe("Create user via POST call ", () => {
                ids: [userId]
             } 
          }))
-      })
+      }).then((res2) => {
+         expect(res2).property("status").eq(200);
+      }) 
    })
 })
 
