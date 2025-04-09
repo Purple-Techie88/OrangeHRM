@@ -5,6 +5,8 @@ describe("Create user via POST call ", () => {
    beforeEach(() => {
       cy.generateUserName();
       cy.loginApplication();
+      console.log(Cypress.env('CYPRESS_USERNAME'));
+      console.log(Cypress.env('CYPRESS_PASSWORD'))
    });
 
    it("Create a non admin user", () => {
