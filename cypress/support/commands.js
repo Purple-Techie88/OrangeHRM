@@ -4,8 +4,8 @@ import { faker } from "@faker-js/faker";
 // -- This headless login command validates the user name and password via an API call --A
 
 Cypress.Commands.add(
-  "login",
-  (userName = Cypress.env("userName"), password = Cypress.env("password")) => {
+  "applicationLogin",
+  (userName = Cypress.env("CYPRESS_USERNAME"), password = Cypress.env("CYPRESS_PASSWORD")) => {
     let headers = {
       "Content-Type": "text/html",
     };

@@ -4,8 +4,8 @@ module.exports = defineConfig({
   projectId: "gfcyrm",
   chromeWebSecurity: false,
   env: {
-    userName: "Admin",
-    password: "admin123",
+    CYPRESS_USERNAME: process.env.CYPRESS_USERNAME,
+    CYPRESS_PASSWORD: process.env.CYPRESS_PASSWORD
   },
   retries: {
     runMode: 1,
