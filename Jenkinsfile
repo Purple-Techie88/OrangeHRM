@@ -14,9 +14,9 @@ pipeline{
     agent any
 
     environment{
-        BUILD_USER = '',
-        CYPRESS_USERNAME = credentials('CYPRESS_USERNAME'),
-        CYPRESS_PASSWORD = credentials('CYPRESS_PASSWORD'),
+        BUILD_USER = ''
+        CYPRESS_USERNAME = credentials('CYPRESS_USERNAME')
+        CYPRESS_PASSWORD = credentials('CYPRESS_PASSWORD')
     }
 
 stages{
