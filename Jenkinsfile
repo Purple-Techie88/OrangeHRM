@@ -16,7 +16,7 @@ pipeline{
     environment{
         BUILD_USER = '',
         CYPRESS_USERNAME = credentials('CYPRESS_USERNAME'),
-        CYPRESS_PASSWORD = credentials('CYPRESS_PASSWORD')
+        CYPRESS_PASSWORD = credentials('CYPRESS_PASSWORD'),
     }
 
 stages{
