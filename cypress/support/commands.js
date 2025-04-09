@@ -5,7 +5,7 @@ import { faker } from "@faker-js/faker";
 
 Cypress.Commands.add(
   "login",
-  (userName = Cypress.env("userName"), password = Cypress.env("password")) => {
+  (userName = Cypress.env("CYPRESS_LOGIN_USER"), password = Cypress.env("CYPRESS_LOGIN_PASSWORD")) => {
     let headers = {
       "Content-Type": "text/html",
     };

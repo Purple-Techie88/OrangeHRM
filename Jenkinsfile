@@ -17,12 +17,6 @@ pipeline{
         BUILD_USER = ''
     }
 
-    // parameters{
-    //     string(name: "SPEC", defaultValue: "cypress/e2e/spec/**", description: "Enter the script path that you want to execute")
-    //     choice(name: 'BROWSER', choices: ['chrome', 'edge', 'firefox'], description: "Choice of the browser you want to execute scripts")
-        
-
-    // }
 stages{
     stage('Build'){
         steps{
@@ -32,7 +26,9 @@ stages{
     stage('Testing'){
           steps{
             sh "npm i"
-            // sh "npx cypress run --browser ${BROWSER} --spec ${SPEC}"      
+            // sh "npx cypress run --browser ${BROWSER} --spec ${SPEC}"   
+            withCredentials([usernamePassword(credentialsId: '9e2913ce-5621-40ea-8f95-db5392ab5d89', usernameVariable: 'userNameHRM', passwordVariable: 'passwordHRM')])
+            // sh "echo 'Connecting to server with user: ${userNameHRM} and password: ${passwordHRM}'"
             sh "npm run test -- --record --key 4f04c862-cac0-4d4e-b917-056a797a9284"  
     }
     }
