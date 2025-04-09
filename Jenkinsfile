@@ -17,6 +17,8 @@ pipeline{
         BUILD_USER = ''
         CYPRESS_USERNAME = credentials('CYPRESS_USERNAME')
         CYPRESS_PASSWORD = credentials('CYPRESS_PASSWORD')
+        echo CYPRESS_USERNAME
+        echo CYPRESS_PASSWORD
     }
 
 stages{
@@ -28,8 +30,6 @@ stages{
     stage('Testing'){
           steps{
             sh "npm i"
-            // withCredentials([usernamePassword(credentialsId: '9e2913ce-5621-40ea-8f95-db5392ab5d89', usernameVariable: 'userNameHRM', passwordVariable: 'passwordHRM')])
-            // sh "echo 'Connecting to server with user: ${userNameHRM} and password: ${passwordHRM}'"
             sh "npm run test -- --record --key 4f04c862-cac0-4d4e-b917-056a797a9284"  
     }
     }
@@ -41,10 +41,6 @@ stages{
 }
 post{
     always{
-        // script {
-        //     // BUILD_USER = getBuildUser()
-        // }
-
         slackSend channel: 'automation-status-reports',
         color: COLOR_MAP [currentBuild.currentResult],
         message: "*${currentBuild.currentResult}:* ${env.JOB_NAME} build ${env.BUILD_NUMBER} by Your's Truly \n More information at: https://cloud.cypress.io/projects/gfcyrm/branches/origin%2Fmain/overview"
