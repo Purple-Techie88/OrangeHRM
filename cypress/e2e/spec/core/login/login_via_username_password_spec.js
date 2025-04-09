@@ -9,8 +9,8 @@ describe("User can log in and out of OrangeHRM", () => {
 
     it("Valid username/password logs user in", () => {
 
-        const userName = Cypress.env('userName');
-        const password = Cypress.env('password');
+        const userName = Cypress.env('CYPRESS_USERNAME');
+        const password = Cypress.env('CYPRESS_PASSWORD');
         
         login_page.getUserNameInputField().type(userName);
         login_page.getPasswordInputField().type(password);

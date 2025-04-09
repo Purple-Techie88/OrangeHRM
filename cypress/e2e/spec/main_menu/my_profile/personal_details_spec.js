@@ -5,7 +5,7 @@ import dashboard_page from "../../../page_objects/dashboard_page";
 describe("User is able to update Personal Details in profile", () => {
   beforeEach(() => {
     cy.generateUserName();
-    cy.login();
+    cy.loginApplication();
   });
 
   it("Update personal details", () => {
