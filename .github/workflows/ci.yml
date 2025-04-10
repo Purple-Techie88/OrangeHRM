@@ -1,11 +1,13 @@
 name: End-to-tests
 on: push
-env:
-  CYPRESS_USERNAME: ${{secrets.CYPRESS_USERNAME_HRM}}
-  CYPRESS_PASSWORD: ${{secrets.CYPRESS_PASSWORD_HRM}}
 jobs:
   cypress-run:
     runs-on: ubuntu-24.04
+
+    env:
+      CYPRESS_USERNAME: ${{  secrets.CYPRESS_USERNAME_HRM  }}
+      CYPRESS_PASSWORD: ${{  secrets.CYPRESS_PASSWORD_HRM  }}
+    
     steps:
       - name: Checkout
         uses: actions/checkout@v4
