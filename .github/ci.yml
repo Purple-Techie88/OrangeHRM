@@ -1,5 +1,8 @@
 name: End-to-tests
 on: push
+env:
+  CYPRESS_USERNAME: 'CYPRESS_USERNAME_HRM'
+  CYPRESS_PASSWORD: 'CYPRESS_PASSWORD_HRM'
 jobs:
   cypress-run:
     runs-on: ubuntu-24.04
