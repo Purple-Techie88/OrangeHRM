@@ -1,6 +1,5 @@
 name: End-to-tests
-on: push:
-    pull_request:
+on: push
 env:
   CYPRESS_USERNAME: 'CYPRESS_USERNAME_HRM'
   CYPRESS_PASSWORD: 'CYPRESS_PASSWORD_HRM'
