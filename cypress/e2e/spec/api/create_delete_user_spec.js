@@ -4,7 +4,7 @@ const { faker } = require("@faker-js/faker")
 describe("Create user via POST call ", () => {
    beforeEach(() => {
       cy.generateUserName();
-      cy.login();
+      cy.applicationLogin();
    });
 
    it("Create a non admin user", () => {
