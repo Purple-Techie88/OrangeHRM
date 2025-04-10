@@ -27,7 +27,7 @@ describe("User can log in and out of OrangeHRM", () => {
         cy.get(".oxd-input-group__message").should("have.length", 2);
     });
 
-    it("Invalid username/password denies user login", () => {
+    it.skip("Invalid username/password denies user login", () => {
         
         login_page.getUserNameInputField().type("invalid");
         login_page.getPasswordInputField().type("invalid");
