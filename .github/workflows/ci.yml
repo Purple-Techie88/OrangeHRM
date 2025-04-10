@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: npm run test -- --record --key 4f04c862-cac0-4d4e-b917-056a797a9284
+      - name: npm run test -- --record --key e714ce47-c05c-4fc9-b929-4e15a5c6e460
         uses: cypress-io/github-action@v6
 
       
