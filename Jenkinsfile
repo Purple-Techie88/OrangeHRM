@@ -13,7 +13,9 @@ pipeline {
     agent any
 
     environment {
-        BUILD_USER = ''
+        BUILD_USER = '',
+        CYPRESS_RECORD_KEY: 'CYPRESS_RECORD_KEY'
+
     }
 
     stages {
@@ -33,11 +35,10 @@ pipeline {
                         credentialsId: 'CYPRESS_CREDENTIALS', 
                         usernameVariable: 'CYPRESS_USERNAME', 
                         passwordVariable: 'CYPRESS_PASSWORD'
-                        cypressRecordKey: 'CYPRESS_RECORD_KEY'
                     )
                 ]) {
                     sh "npm i"
-                    sh "npm run test -- --record --key ${cypressRecordKey}"
+                    sh "npm run test -- --record --key ${CYPRESS_RECORD_KEY}"
                 }
             }
         }
