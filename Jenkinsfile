@@ -30,13 +30,14 @@ pipeline {
             steps {
                 withCredentials([
                     usernamePassword(
-                        credentialsId: '6eaa3d1f-9556-4f15-947b-8dc8b8b99b97', 
+                        credentialsId: 'CYPRESS_CREDENTIALS', 
                         usernameVariable: 'CYPRESS_USERNAME', 
                         passwordVariable: 'CYPRESS_PASSWORD'
+                        cypressRecordKey: 'CYPRESS_RECORD_KEY'
                     )
                 ]) {
                     sh "npm i"
-                    sh "npm run test -- --record --key 4f04c862-cac0-4d4e-b917-056a797a9284"
+                    sh "npm run test -- --record --key ${cypressRecordKey}"
                 }
             }
         }
