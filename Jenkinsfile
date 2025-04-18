@@ -30,7 +30,6 @@ pipeline {
             steps {
                 withCredentials([
                     usernamePassword(
-                        credentialsId: 'CYPRESS_CREDENTIALS', 
                         usernameVariable: 'CYPRESS_USERNAME', 
                         passwordVariable: 'CYPRESS_PASSWORD',
                     ),
