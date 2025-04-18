@@ -8,6 +8,7 @@ jobs:
     env:
       CYPRESS_USERNAME: ${{ secrets.CYPRESS_USERNAME_HRM }}
       CYPRESS_PASSWORD: ${{ secrets.CYPRESS_PASSWORD_HRM }}
+      CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
 
     steps:
       - name: Checkout code

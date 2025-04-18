@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "node_modules/.bin/cypress run",
-    "chromeTest": "npm run test -- -- browser chrome",
-    "recordDashboardTest": "npm run test -- --record --key 4f04c862-cac0-4d4e-b917-056a797a9284"
+    "chromeTest": "npm run test -- -- browser chrome"
   },
   "keywords": [],
   "author": "LaMorica Swain",
