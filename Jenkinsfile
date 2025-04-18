@@ -38,7 +38,7 @@ pipeline {
 
                 ]) {
                     sh 'npm install'
-                    sh "npm run test -- --record --key ${CYPRESS_RECORD_KEY}"
+                    sh 'npm run test -- --record --key ${CYPRESS_RECORD_KEY}'
                 }
             }
         }
