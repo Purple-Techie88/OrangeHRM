@@ -23,7 +23,7 @@ jobs:
             -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
             -H 'Content-type: application/json' \
             --data '{
-              "channel": "#your-channel-name",
+              "channel": "#automation-status-reports",
               "text": "✅ Cypress tests completed successfully on *main*!",
-              "username": "GitHub Bot"
+              "username": "OrangeHM Team"
             }'
