@@ -11,7 +11,7 @@ describe("Create user via POST call ", () => {
 
       let userName = Cypress.env("testUserName");
       let userPassword = `${faker.lorem.word(7) + faker.number.int({ min: 100, max: 150 })}`;
-      let employeeNumbers = [112, 117, 109];
+      let employeeNumbers = [220, 223, 230];
       let employeeNumber = employeeNumbers[Math.floor(Math.random() * employeeNumbers.length)];
 
       let baseUrl = Cypress.config("baseUrl");
