@@ -6,6 +6,9 @@ node_modules/
 cypress/videos/
 cypress/screenshots/
 
+# Cypress environment config
+cypress.env.json
+
 # Logs & OS junk
 *.log
 .DS_Store
