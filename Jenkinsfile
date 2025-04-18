@@ -55,6 +55,7 @@ pipeline {
             slackSend (
                 channel: 'automation-status-reports',
                 color: COLOR_MAP[currentBuild.currentResult] ?: 'warning',
+                tokenCredentialId: 'slack-token'
                 message: "*${currentBuild.currentResult}:* ${env.JOB_NAME} build ${env.BUILD_NUMBER} by ${env.BUILD_USER}\nMore information at: https://cloud.cypress.io/projects/gfcyrm/branches/origin%2Fmain/overview"
             )
         }
