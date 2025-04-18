@@ -13,7 +13,7 @@ pipeline {
     agent any
 
     environment {
-        BUILD_USER = '',
+        BUILD_USER = ''
 
     }
 
