@@ -1,5 +1,4 @@
 name: End-to-End Tests
-
 on: push
 jobs:
   cypress-run:
@@ -9,9 +8,8 @@ jobs:
       CYPRESS_USERNAME: ${{ secrets.CYPRESS_USERNAME_HRM }}
       CYPRESS_PASSWORD: ${{ secrets.CYPRESS_PASSWORD_HRM }}
       CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
       - name: Run Cypress tests
         uses: cypress-io/github-action@v6
