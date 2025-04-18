@@ -14,7 +14,6 @@ pipeline {
 
     environment {
         BUILD_USER = '',
-        CYPRESS_RECORD_KEY: 'CYPRESS_RECORD_KEY',
 
     }
 
