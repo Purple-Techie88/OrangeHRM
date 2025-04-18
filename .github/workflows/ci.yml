@@ -1,17 +1,31 @@
-name: End-to-tests
+name: End-to-End Tests
 on: push
 jobs:
   cypress-run:
     runs-on: ubuntu-24.04
 
     env:
-      CYPRESS_USERNAME: ${{  secrets.CYPRESS_USERNAME_HRM  }}
-      CYPRESS_PASSWORD: ${{  secrets.CYPRESS_PASSWORD_HRM  }}
-    
+      CYPRESS_USERNAME: ${{ secrets.CYPRESS_USERNAME_HRM }}
+      CYPRESS_PASSWORD: ${{ secrets.CYPRESS_PASSWORD_HRM }}
+      CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: npm run test -- --record --key e714ce47-c05c-4fc9-b929-4e15a5c6e460
+      - name: Run Cypress tests
         uses: cypress-io/github-action@v6
+        with:
+          record: true
+          key: ${{ secrets.CYPRESS_RECORD_KEY }}
 
-      
+      - name: Send Slack message using Slack App
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+        run: |
+          curl -X POST https://slack.com/api/chat.postMessage \
+            -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
+            -H 'Content-type: application/json' \
+            --data '{
+              "channel": "#automation-status-reports",
+              "text": "✅ Cypress tests completed successfully on *main*!",
+              "username": "OrangeHM Team"
+            }'
