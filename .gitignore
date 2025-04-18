@@ -1,0 +1,11 @@
+# Node
+node_modules/
+.env
+
+# Cypress outputs
+cypress/videos/
+cypress/screenshots/
+
+# Logs & OS junk
+*.log
+.DS_Store

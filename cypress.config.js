@@ -1,11 +1,13 @@
+require('dotenv').config();
 const { defineConfig } = require("cypress");
+
 
 module.exports = defineConfig({
   projectId: "gfcyrm",
   chromeWebSecurity: false,
   env: {
     CYPRESS_USERNAME: process.env.CYPRESS_USERNAME,
-    CYPRESS_PASSWORD: process.env.CYPRESS_PASSWORD
+    CYPRESS_PASSWORD: process.env.CYPRESS_PASSWORD,
   },
   retries: {
     runMode: 1,
