@@ -32,8 +32,8 @@ pipeline {
                     usernamePassword(
                         credentialsId: 'CYPRESS_CREDENTIALS', 
                         usernameVariable: 'CYPRESS_USERNAME', 
-                        passwordVariable: 'CYPRESS_PASSWORD'
-                        cypressRecordKey: 'CYPRESS_RECORD_KEY'
+                        passwordVariable: 'CYPRESS_PASSWORD',
+                        cypressRecordKey: 'CYPRESS_RECORD_KEY',
                     )
                 ]) {
                     sh "npm i"
